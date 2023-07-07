@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+<div class="wrapper">
+
+	<div class="top_navbar">
+		<div class="logo">
+			<a href="#">CNI FORMATION </a>
+		</div>
+		<div class="top_menu">
+			<div class="home_link">
+				
+			</div>
+			<div class="right_info">
+				
+        <button *ngIf="! isLoggedIn()" routerLink="/login" mat-raised-button color="primary">Login</button>
+        <button *ngIf="isLoggedIn()" (click)="logout()" mat-raised-button color="primary">Logout</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="main_body">
+		
+		<div class="sidebar_menu">
+	        <div class="inner__sidebar_menu" >
+	        	
+	        	<ul>
+		          <li>
+		            <a href="/">
+		              <span class="icon">
+		              	<i class="fas fa-border-all"></i></span>
+		              <span class="list">Acceuil</span>
+		            </a>
+		          </li>
+              <div *ngIf="isLoggedIn()">
+		          <li>
+		            <a *ngIf="!isAdmin()" routerLink="/myOrders" >
+		              <span class="icon"><i></i></span>
+		              <span class="list">Mes Inscription</span>
+                
+		            </a>
+		          </li>
+		          <li>
+		            <a *ngIf="isAdmin()" routerLink="/addNewProduct">
+		              <span class="icon"><i ></i></span>
+		              <span class="list">Ajouter Formation</span>
+		            </a>
+		          </li>
+		          <li>
+		            <a *ngIf="isAdmin()"  routerLink="/showProductDetailes">
+		              <span class="icon"><i class="fas fa-address-card"></i></span>
+		              <span class="list">List Formation</span>
+		            </a>
+		          </li>
+		          <li>
+		            <a *ngIf="isAdmin()"routerLink="/addformateur">
+		              <span class="icon"><i class="fab fa-blogger"></i></span>
+		              <span class="list">Ajouter Formateur</span>
+		            </a>
+		          </li>
+		          <li>
+		            <a *ngIf="isAdmin()" routerLink="/listformateur">
+		              <span class="icon"><i class="fas fa-map-marked-alt"></i></span>
+		              <span class="list">Liste Formateur</span>
+		            </a>
+		          </li>
+
+
+              <li>
+		            <a *ngIf="isAdmin()"  routerLink="/orderInformation">
+		              <span class="icon"><i class="fas fa-map-marked-alt"></i></span>
+		              <span class="list">Liste Inscription</span>
+		            </a>
+		          </li>
+
+            </div>
+		        </ul>
+
+		        <div class="hamburger">
+			        <div class="inner_hamburger">
+			            <span class="arrow">
+			                <i class="fas fa-long-arrow-alt-left"></i>
+			                <i class="fas fa-long-arrow-alt-right"></i>
+			            </span>
+			        </div>
+			    </div>
+
+	        </div>
+	    </div>
+
+	    <div class="container">
+	    	<router-outlet></router-outlet>
+	    </div>
+	</div>
+</div>
+	
+
+</body>
+</html>
+

@@ -1,0 +1,39 @@
+
+<a class="cni">Mes Inscriptions</a>
+
+<div class="container mt-5">
+
+    <table mat-table [dataSource]="myOrderDetails" class="mat-elevation-z8">
+      <ng-container matColumnDef="Id">
+        <th mat-header-cell *matHeaderCellDef>Numero</th>
+        <td mat-cell *matCellDef="let element"> {{element.orderId}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="nomFormation">
+          <th mat-header-cell *matHeaderCellDef> Nom du formation </th>
+          <td mat-cell *matCellDef="let element"> {{element.product.nomFormation}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Name">
+          <th mat-header-cell *matHeaderCellDef> Nom et prénom du participant</th>
+          <td mat-cell *matCellDef="let element"> {{element.orderFullName}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Address">
+          <th mat-header-cell *matHeaderCellDef> CIN</th>
+          <td mat-cell *matCellDef="let element"> {{element.orderFullOrder}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Contact No">
+          <th mat-header-cell *matHeaderCellDef>Direction/Service </th>
+          <td mat-cell *matCellDef="let element"> {{element.orderContactNumber}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Status">
+          <th mat-header-cell *matHeaderCellDef>Entreprise </th>
+          <td mat-cell *matCellDef="let element"> {{element.orderAlternateContactNumber}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div> 

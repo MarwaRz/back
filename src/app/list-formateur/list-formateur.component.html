@@ -1,0 +1,52 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <a class="cni">Liste des formateurs</a>
+    
+     </div>
+  <mat-form-field appearance="outline" class="w-50">
+    <mat-label>Chercher un formateur</mat-label>
+    <input 
+    #searchkeyword
+    (keyup) ="searchByKeyword(searchkeyword.value)"
+    matInput name="searchKey" id="searchKey" placeholder="chercher un formateur">      
+</mat-form-field>
+
+  <div class="panel-body">
+    <form>
+     
+    </form>
+    <table class="table table-striped" >
+      <thead>
+        <tr>
+          <th>Numero</th>
+          <th>Nom et prénom</th>
+          <th>Spécialité</th>
+          <th>Direction</th>
+          <th>Actions</th>
+         
+        </tr>
+
+      </thead>
+      <tbody>
+          <tr  *ngFor="let formateur of formateurs|async">
+            <ng-container matColumnDef="Product Description">
+              <th mat-header-cell *matHeaderCellDef> Description </th>
+              <td mat-cell > {{formateur.specialite}} </td>
+            </ng-container>
+
+
+          <td>{{formateur.id}}</td>
+          <td>{{formateur.nomFormateur}}</td>
+          <td>{{formateur.specialite}}</td>
+          <td>{{formateur.direction}}</td>
+          <td><button (click)="deleteFormateur(formateur.id)" class="btn btn-danger"><mat-icon> delete</mat-icon></button>
+              <button (click)="updateFormateur(formateur.id)" class="btn btn-info" style="margin-left: 10px"><mat-icon> edit</mat-icon></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+

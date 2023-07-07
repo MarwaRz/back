@@ -1,0 +1,75 @@
+
+<a class="cni">S'inscrire</a>
+
+<div class="container mt-5">
+    <div class="card p-3">
+        <div class="row">
+            <div class="col-6">
+
+                <form #orderForm="ngForm" (ngSubmit)="placeOrder(orderForm)">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Nom et prénom</mat-label>
+                        <input matInput 
+                        placeholder="Full Name"
+                        required [(ngModel)]="orderDetails.fullName"
+                        name="fullName">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>CIN</mat-label>
+                        <input matInput 
+                        placeholder="Full address"
+                        required [(ngModel)]="orderDetails.fullAddress"
+                        name="fullAddress">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Direction/Sevice</mat-label>
+                        <input matInput 
+                        required placeholder="Contact number"
+                        [(ngModel)]="orderDetails.contactNumber"
+                        name="contactNumber">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Entreprise</mat-label>
+                        <input matInput 
+                        required placeholder="Alternate contact number"
+                        [(ngModel)]="orderDetails.alternateContactNumber"
+                        name="alternateContactNumber">
+                    </mat-form-field>
+
+                    <div align="right">
+                        <button type="submit" mat-stroked-button color="primary">Confirmer</button>
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="col-6">
+                <table class="table">
+                    <thead class="thead">
+                        <tr>
+                            <th>Name</th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody class="tbody">
+                        <tr *ngFor="let product of productDetails">
+                            <td>{{product.nomFormation}}</td>
+                    
+
+                            <td>
+                      
+                            </td>
+                        </tr>
+
+                    
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

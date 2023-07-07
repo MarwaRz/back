@@ -1,0 +1,56 @@
+
+
+<div class="login-root">
+    <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
+     
+      <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+        <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+            <h1><a class="cni">CNI FORMATION</a></h1>
+          </div>
+          <div class="formbg-outer">
+            <div class="formbg">
+              <div class="formbg-inner padding-horizontal--48">
+                <span class="cnii">Se Connecter</span>
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Username</mat-label>
+                <input required matInput ngModel name="userName" id="userName" placeholder="Username">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Password</mat-label>
+                <input  required  type="password" matInput ngModel name="userPassword" id="userPassword" placeholder="Password">
+            </mat-form-field>
+
+              <button class="w-100" type="submit" mat-raised-button color="primary">Login</button>
+              <br>  <br>
+              <button class="w-100" type="button" mat-raised-button color="primary" (click)="registerUser()">Cree un compt</button>
+
+           
+        </form>
+
+              </div>
+    </div>
+
+   
+</div>
+
+
+      </div></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

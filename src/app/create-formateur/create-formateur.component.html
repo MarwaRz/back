@@ -1,0 +1,56 @@
+
+
+<a class="cni">Ajouter un formateur</a>
+
+<div class="container mt-5">
+    <div class="card p-2">
+        <div class="row">
+            <div class="col-6">
+  <form (ngSubmit)="onSubmit()">
+  
+
+
+
+
+
+
+    <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Nom et prénom</mat-label>
+        <input matInput 
+        placeholder="Nom et prénom"
+        [(ngModel)]="formateur.nomFormateur"
+        name="nomFormateur">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Spécialité</mat-label>
+        <input matInput 
+        placeholder="Spécialité"
+        [(ngModel)]="formateur.specialite"
+        name="specialite">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Direction</mat-label>
+        <input matInput 
+        placeholder="direction"
+        [(ngModel)]="formateur.direction"
+        name="direction">
+    </mat-form-field>
+
+
+
+
+
+
+    <div align="end">
+        <button mat-stroked-button color="primary" style="margin-right: 3px;">vider</button>
+        <button type="submit" mat-stroked-button color="primary">Ajouter</button>
+      
+    </div>
+
+   
+  </form>
+</div>
+        </div></div></div>
+
